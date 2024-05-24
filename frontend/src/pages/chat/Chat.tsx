@@ -726,11 +726,12 @@ const Chat = () => {
           </h2>
         </Stack>
       ) : (
+
         <Stack horizontal className={styles.chatRoot}>
           <div className={styles.chatContainer}>
             {!messages || messages.length < 1 ? (
               <Stack className={styles.chatEmptyState}>
-                <img src={ui?.chat_logo ? ui.chat_logo : Contoso} className={styles.chatIcon} aria-hidden="true" />
+                {/* <img src={ui?.chat_logo ? ui.chat_logo : Contoso} className={styles.chatIcon} aria-hidden="true" /> */}
                 <h1 className={styles.chatEmptyStateTitle}>{ui?.chat_title}</h1>
                 <h2 className={styles.chatEmptyStateSubtitle}>{ui?.chat_description}</h2>
               </Stack>
@@ -798,7 +799,9 @@ const Chat = () => {
                   </span>
                 </Stack>
               )}
-              <Stack>
+
+
+              {/* <Stack>
                 {appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured && (
                   <CommandBarButton
                     role="button"
@@ -825,6 +828,8 @@ const Chat = () => {
                     aria-label="start a new chat button"
                   />
                 )}
+
+                
                 <CommandBarButton
                   role="button"
                   styles={{
@@ -857,12 +862,15 @@ const Chat = () => {
                   disabled={disabledButton()}
                   aria-label="clear chat button"
                 />
+
+
                 <Dialog
                   hidden={hideErrorDialog}
                   onDismiss={handleErrorDialogClose}
                   dialogContentProps={errorDialogContentProps}
                   modalProps={modalProps}></Dialog>
-              </Stack>
+              </Stack> */}
+
               <QuestionInput
                 clearOnSend
                 placeholder="Type a new question..."
@@ -876,7 +884,11 @@ const Chat = () => {
                   appStateContext?.state.currentChat?.id ? appStateContext?.state.currentChat?.id : undefined
                 }
               />
+              
             </Stack>
+
+
+
           </div>
           {/* Citation Panel */}
           {messages && messages.length > 0 && isCitationPanelOpen && activeCitation && (

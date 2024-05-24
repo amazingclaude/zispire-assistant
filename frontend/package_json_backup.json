@@ -1,0 +1,24 @@
+ #This scripts are the original one, for production
+ 
+ "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "watch": "tsc && vite build --watch",
+    "test": "jest",
+    "lint": "npx eslint src",
+    "lint:fix": "npx eslint --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npx prettier src --write",
+    "format": "npm run prettier:fix && npm run lint:fix"
+  },
+
+  #This scripts are for devlopment's purpose. 
+  #To be used together with "npm run dev" (run the code from the directory where package.json located)
+
+
+  "scripts": {
+    "dev": "vite",
+    "type-check:watch": "tsc --noEmit --watch",
+    "build": "tsc && vite build",
+    "watch": "npm run type-check:watch & npm run dev"
+  },

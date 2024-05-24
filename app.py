@@ -42,7 +42,7 @@ load_dotenv()
 UI_TITLE = os.environ.get("UI_TITLE") or "Zispire Assistant"
 UI_LOGO = os.environ.get("UI_LOGO")
 UI_CHAT_LOGO = os.environ.get("UI_CHAT_LOGO")
-UI_CHAT_TITLE = os.environ.get("UI_CHAT_TITLE") or "Start chatting"
+UI_CHAT_TITLE = os.environ.get("UI_CHAT_TITLE") or "Hi There"
 UI_CHAT_DESCRIPTION = (
     os.environ.get("UI_CHAT_DESCRIPTION")
     or "Ask me any anything about Zispire or Human Resource related questions"
@@ -55,6 +55,7 @@ def create_app():
     app = Quart(__name__)
     app.register_blueprint(bp)
     app.config["TEMPLATES_AUTO_RELOAD"] = True
+    app.debug = True  # Enable debug mode
     return app
 
 
